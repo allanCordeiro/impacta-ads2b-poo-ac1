@@ -36,6 +36,7 @@ def conta_primos(s: list):
 
     return contador
 
+
 def calcula_armstrong(n):
     separa_digito = [int(i) for i in str(n)]
     calcula = 0
@@ -43,6 +44,7 @@ def calcula_armstrong(n):
     for numero in separa_digito:
         calcula += numero ** qte_digitos
     return calcula
+
 
 def eh_armstrong(n):
     calcula = calcula_armstrong(n)
@@ -68,4 +70,20 @@ def lista_armstrong(n):
     return array_armstrong
 
 
-print(lista_armstrong(92727))
+def eh_perfeito(n):
+    resultado = 0
+    for item in range(1, n):
+        if n % item == 0:
+            resultado += item
+    if resultado == n:
+        return True
+    return False
+
+
+def lista_perfeitos(n):
+    array_perfeitos = []
+    for item in range(2, n):
+        if eh_perfeito(item):
+            array_perfeitos.append(item)
+    return array_perfeitos
+
