@@ -36,4 +36,36 @@ def conta_primos(s: list):
 
     return contador
 
+def calcula_armstrong(n):
+    separa_digito = [int(i) for i in str(n)]
+    calcula = 0
+    qte_digitos = len(separa_digito)
+    for numero in separa_digito:
+        calcula += numero ** qte_digitos
+    return calcula
 
+def eh_armstrong(n):
+    calcula = calcula_armstrong(n)
+    if calcula == n:
+        return True
+    return False
+
+
+def eh_quase_armstrong(n):
+    calcula = calcula_armstrong(n)
+    if calcula != n:
+        diff = calcula - n
+        if diff == -1 or diff == 1:
+            return True
+    return False
+
+
+def lista_armstrong(n):
+    array_armstrong = []
+    for item in range(1, n):
+        if eh_armstrong(item):
+            array_armstrong.append(item)
+    return array_armstrong
+
+
+print(lista_armstrong(92727))
