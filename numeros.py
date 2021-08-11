@@ -3,6 +3,7 @@
 # Allan Cordeiro dos Santos
 # Email Impacta: allan.cordeiro@aluno.faculdadeimpacta.com.br
 
+
 def eh_primo(n):
     teste = False
     for item in range(1, n+1):
@@ -24,4 +25,15 @@ def lista_primos(n):
 
     return array_primos
 
-print(lista_primos(100))
+
+def conta_primos(s: list):
+    s.sort()
+    contador = {}
+    for numero in s:
+        if eh_primo(numero):
+            qtd = contador.get(numero, 0)
+            contador[numero] = qtd + 1
+
+    return contador
+
+
