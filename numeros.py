@@ -64,7 +64,7 @@ def eh_quase_armstrong(n):
 
 def lista_armstrong(n):
     array_armstrong = []
-    for item in range(1, n):
+    for item in range(0, n):
         if eh_armstrong(item):
             array_armstrong.append(item)
     return array_armstrong
